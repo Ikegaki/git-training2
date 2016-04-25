@@ -1,0 +1,6 @@
+diamond
+ruby
+aquamarine
+amber
+emerald
+obsidian
