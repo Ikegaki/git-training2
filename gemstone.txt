@@ -2,5 +2,6 @@ diamond
 ruby
 aquamarine
 amber
+perl
 emerald
 obsidian
