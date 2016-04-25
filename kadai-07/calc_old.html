@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>課題７</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style type="text/css">
+  
+  /* 電卓 */
+  #calculator{
+    background: #DAF8FF;
+    padding: 15px 5px;
+    width: 180px;
+    border-radius: 5px;
+  }
+  
+  /* 出力エリア */
+  .output_area{
+    width: 130px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    margin: 5px auto;
+    border: solid 1px #aaa;
+    background: #fff;
+    text-align: right;
+    padding: 0 5px;
+  }
+  
+  /* ボタン */
+  .number_btn input[type="button"]{
+    font-size: 15pt;
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+    text-align: center;
+    border: 0;
+    outline: none;
+    background: #FFB9CE;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* マウスを乗せたとき */
+  .number_btn input[type="button"]:hover{
+    background: #FF6D99;
+  }
+  /* マウスを押している間 */
+  .number_btn input[type="button"]:active{
+    background: #FF296A;
+  }
+  
+  .number_btn ul{
+    width: 170px;
+    margin: 0 0 0 -22px;
+    overflow: hidden;
+  }
+  .number_btn li{
+    list-style-type: none;
+    float: left;
+    width: 51px;
+  }
+  
+</style>
+<script type="text/javascript">
+  $(function(){
+    
+    //全てのボタンにクリックイベントを付与
+    $("#calc input[type='button']").each(function(i, elem) {
+      
+      //ボタンのid
+      var v_id = elem.id;
+      
+      $("#" + v_id).click(function(){
+        
+        //+ボタン
+        if(v_id == "num_plus"){
+          var v_sum = 0;
+          //入力値と合計値の値を足す
+          v_sum = parseInt($("#input_area").text()) + parseInt($("#calc_area").text());
+          
+          //それぞれに値をセット
+          $("#input_area").text(0);
+          $("#calc_area").text(v_sum);
+        }
+        //Cボタン
+        else if(v_id == "num_clear"){
+          //すべて0に戻す
+          $("#input_area").text(0);
+          $("#calc_area").text(0);
+        }
+        //数字ボタン
+        else{
+          var v_input = $("#input_area").text();
+          
+          //入力エリアに「0」のみあった場合
+          if(v_input == "0"){
+            v_input = "";
+          }
+          //入力数字は10桁までにする
+          if(v_input.length < 10){
+            v_input += $(this).val();
+          }
+          
+          $("#input_area").text(v_input);
+        }
+        
+      });
+    });
+  });
+  
+</script>
+</head>
+<body>
+  ジャバスクリプト電卓<br /><br />
+  
+  <div id="calculator">
+    
+    <div class="output_area" id="input_area" title="入力値">0</div>
+    <div class="output_area" id="calc_area" title="合計値">0</div>
+    
+    <div class="number_btn" id="calc">
+      <ul>
+        <li><input type="button" id="num_7" value="7" /></li>
+        <li><input type="button" id="num_8" value="8" /></li>
+        <li><input type="button" id="num_9" value="9" /></li>
+        <li><input type="button" id="num_4" value="4" /></li>
+        <li><input type="button" id="num_5" value="5" /></li>
+        <li><input type="button" id="num_6" value="6" /></li>
+        <li><input type="button" id="num_1" value="1" /></li>
+        <li><input type="button" id="num_2" value="2" /></li>
+        <li><input type="button" id="num_3" value="3" /></li>
+        <li><input type="button" id="num_clear" value="C" /></li>
+        <li><input type="button" id="num_0" value="0" /></li>
+        <li><input type="button" id="num_plus" value="+" /></li>
+      </ul>
+    </div>
+    
+  </div>
+  
+</body>
+</html>

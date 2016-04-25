@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  font-size: 12pt;
+  color: #666;
+  background: #FBFBFB;
+}
+
+.error{
+  color: #FF0000;
+  text-align: center;
+}
+
+.zero{
+  color: #0000FF;
+  text-align: center;
+}
+
+#content{
+  width: 680px;
+  margin: 0 auto;
+  background: #FFF;
+}
+
+.title{
+  font-size: 25pt;
+  padding: 15pt 0;
+  color: #FF9B9B;
+  text-align: center;
+  font-weight: bold;
+}
+
+.one_post_area{
+  width: 550px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.one_post_area p{
+  color: #4728C2;
+}
+
+.one_post_area span{
+  color: #999;
+  font-size: 11pt;
+}
+
+.one_post_area div{
+  margin: 10px 0 20px 0;
+}
+
+.fomr_area{
+  width: 600px;
+  height: 200px;
+  padding-top: 25px;
+  margin: 10px auto;
+  border-top: dotted 1px #888;
+  text-align: center;
+}
+
+.input_area{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.input_area p{
+  text-align: left;
+}
+input[type="text"]{
+  margin-top: 5px;
+}
+
+textarea{
+  width:500px;
+  height:100px;
+  margin: 5px 0;
+  padding: 3px;
+}
+
+input[type="submit"]{
+  padding: 3px;
+}
+
